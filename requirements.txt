@@ -1,7 +1,6 @@
 black
 pandas 
 pyqt5
-cury
 toolz
 flake8
 PyQtWebEngine

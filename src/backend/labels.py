@@ -1,11 +1,12 @@
 from pathlib import Path
 from typing import Optional
+from uuid import uuid1
 
 import pandas as pd
 
 from src.utils import QuestionMessageBox, MessageBox
 
-
+# pyinstaller app.py --windowed --onefile --name "MarcadorDeEntidades" --add-data=pdfjs:.pdfjs
 class LabelRegister:
     def __init__(self):
         pass
@@ -64,6 +65,8 @@ class LabelRegister:
                     return
                 except Exception:
                     MessageBox("Erro na leitura do arquivo!")
+            else:
+                log_pth.rename(log_pth.parent / f"{log_pth.stem}_{uuid1()}.csv")
         self.database = pd.DataFrame(
             columns=["filename", "label", "fieldname", "datetime", "fieldtype"]
         )

@@ -1,6 +1,6 @@
-import time
 import os
 import re
+from datetime import datetime
 
 from PyQt5.QtWidgets import (
     QPushButton,
@@ -77,7 +77,7 @@ class ControlButtons(QWidget):
                 label_widget.setCurrentText(fill_txt)
 
             self.label_register.add(
-                filename, label, time.time(), field.name, field.type
+                filename, label, datetime.now(), field.name, field.type
             )
 
         self.counter = self.counter + step

@@ -19,7 +19,6 @@ from src import (
     ControlWidgets,
     LabelRegister,
     MessageBox,
-    QuestionMessageBox,
 )
 
 CURRENT_DIR = Path().absolute()
